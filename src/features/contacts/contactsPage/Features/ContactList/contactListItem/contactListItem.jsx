@@ -1,7 +1,8 @@
 import './contactListItem.css'
-import profilePic from '../../../../../assets/profile.png'
-
+import maleProfile  from '../../../../../../assets/male.png'
+import femaleProfile from '../../../../../../assets/female.png'
 function contactListItem({contact}) {
+  const profilePic = contact.gender === 'male' ? maleProfile : femaleProfile
   return (
     <div className="contact-card">
     <img src={profilePic} alt="" />

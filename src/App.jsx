@@ -95,6 +95,7 @@ function App() {
           element={
             <Appointments
               className={(isActive) => (isActive ? "active" : "")}
+              contacts={contacts}
             />
           }
         />

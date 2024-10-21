@@ -1,4 +1,4 @@
-import ContactListItem from "./contactListItem"
+import ContactListItem from "./contactListItem/contactListItem"
 import './contactList.css'
 
 function contactList({ contacts }) {

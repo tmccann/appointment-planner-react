@@ -1,6 +1,12 @@
-function appointments() {
+import ApointmentForm from '../apointmentsForm/ApointmentForm'
+
+function appointments({ contacts }) {
   return (
-    <div>appointments</div>
+   
+   <>
+    <ApointmentForm 
+    contacts={contacts}/>
+   </>
   )
 }
 export default appointments
