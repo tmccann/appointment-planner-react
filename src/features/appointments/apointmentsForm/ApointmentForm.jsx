@@ -14,7 +14,8 @@ function ApointmentForm({ contacts }) {
     register,
     handleSubmit,
     formState: { errors },
-    control
+    control,
+    reset
   } = useForm();
 
 
@@ -27,6 +28,7 @@ function ApointmentForm({ contacts }) {
           id="contactForm"
           onSubmit={handleSubmit((data) => {
             console.log(data);
+            reset(); 
           })}
         >
           <label htmlFor="title">Title:</label>
