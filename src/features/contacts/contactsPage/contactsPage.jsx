@@ -6,7 +6,6 @@ function contactsPage({ addContact, test, contacts }) {
     <>
       <ContactForm addContact={addContact} />
       <ContactList contacts={contacts} />
-      <button onClick={test}>testing</button>
     </>
   );
 }
