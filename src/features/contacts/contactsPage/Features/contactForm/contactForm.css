@@ -8,6 +8,7 @@
     background-size: cover;
     justify-content: flex-end;
     align-items: flex-start;
+    border-radius: 0.5rem;
     margin: 20px 0;
 }
 
@@ -19,9 +20,8 @@
     margin: 3rem;
     background-color: white;
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 0.5rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* border-left: 5px solid #007BFF; */
 }
 
 .contact-form h2 {
@@ -31,23 +31,34 @@
 }
 
 .contact-form label {
+    margin: 0.5rem;
     display: block;
-    margin: 15px 0 8px;
     font-size: 1rem;
     font-weight: bold;
     color: #333;
 }
 
-.contact-form input {
-    width: 95%; /* Reduced input width */
-    padding: 12px;
-    margin-bottom: 15px;
+.contact-form input, select{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background-color: white;
+    width: 95%; 
+    padding: 0.5rem;
     border-radius: 8px;
     border: 1px solid #ddd;
     transition: border-color 0.3s ease;
 }
 
-.contact-form input:focus {
+#contactForm > select{
+    height: 2.6rem;
+    padding: 0.5rem;
+}
+.contact-form input.radioButton{
+    margin-right:1rem;
+    max-width: 2rem;
+}
+
+.contact-form input:focus, select:focus{
     border-color: #007BFF;
     outline: none;
 }
@@ -58,30 +69,40 @@
 
 .gender-options {
     display: flex;
-    align-items: center; /* Vertically center items */
+    margin: 0;
+    align-items: center; 
   }
   
-  .gender-options label{
-    margin-right: 1rem;
-  }
-  .gender-options input[type="radio"] {
-    transform: translateY(0.75rem);/* Ensures the radio button is vertically aligned */
-  }
-.contact-form button {
+
+
+.contact-form .formButton {
     background-color: #007BFF;
     color: white;
-    padding: 12px 20px;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
+.contact-form .formButton:hover {
     background-color: #0056b3;
 }
 
 .error{
+    display: block;
     color: red;
+}
+
+
+/* Date picker */
+
+#contactForm div.react-datepicker__header h2{
+    font-size: 1rem;
+}
+
+.react-datepicker__time-list-item--disabled{
+    display: none;
 }

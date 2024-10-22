@@ -67,14 +67,14 @@ function ContactForm({ addContact }) {
           <div className="gender-options">
             <label>Gender:</label>
             <label htmlFor="male">Male</label>
-            <input
+            <input className="radioButton"
               {...register("gender", { required: "Gender is required" })}
               type="radio"
               value="male"
             />
 
             <label htmlFor="female">Female</label>
-            <input
+            <input className="radioButton"
               {...register("gender", { required: "Gender is required" })}
               type="radio"
               value="female"
@@ -83,7 +83,7 @@ function ContactForm({ addContact }) {
           <ErrorMessage errors={errors} name="gender" />
 
           <div className="submit-button">
-            <button type="submit">Submit</button>
+            <button className="formButton" type="submit">Submit</button>
           </div>
         </form>
       </div>
