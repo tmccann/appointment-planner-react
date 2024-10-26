@@ -1,3 +1,4 @@
+
 /* Box sizing rules */
 *,
 *::before,
@@ -66,5 +67,3 @@ svg {
     scroll-behavior: auto !important;
   }
 }
-
-

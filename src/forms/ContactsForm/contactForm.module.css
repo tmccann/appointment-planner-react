@@ -1,0 +1,39 @@
+.switch {
+	display: flex;
+  max-width: 50%;
+}
+
+.switch input[type="radio"] {
+  display: none;
+}
+.switch label.switchLabel {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+  background-color: #fff;
+  width: 95%; 
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.switch label.switchLabel:hover {
+  background-color: #0056b3;
+  color:#fff;;
+}
+.switch input:checked + label {
+	background-color: #2d96cd;
+	color:#fff;
+	box-shadow: none;
+}
+
+.switch label:first-of-type {
+	border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.switch label:last-of-type {
+	border-radius: 0 0.5rem 0.5rem 0;
+}
+
