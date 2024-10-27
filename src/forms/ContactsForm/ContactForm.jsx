@@ -20,7 +20,7 @@ function ContactForm({ addContact }) {
       })}
     >
       <label htmlFor="name">Name:</label>
-      <input
+      <input id='name'
         {...register("name", {
           required: "Name is required",
           pattern: {
@@ -30,9 +30,8 @@ function ContactForm({ addContact }) {
         })}
       />
       <ErrorMessage errors={errors} name="name" />
-
       <label htmlFor="email">Email:</label>
-      <input
+      <input id='email'
         {...register("email", {
           required: "Email is required",
           pattern: {
@@ -44,7 +43,7 @@ function ContactForm({ addContact }) {
       <ErrorMessage errors={errors} name="email" />
 
       <label htmlFor="phone">Phone Number:</label>
-      <MaskedInput
+      <MaskedInput id='phone'
         mask={['(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
         placeholder="(123) 456-7890"
         {...register("phone", {
@@ -58,11 +57,11 @@ function ContactForm({ addContact }) {
         onChange={(e) => setValue("phone", e.target.value)}
       />
       <ErrorMessage errors={errors} name="phone" />
-        <label htmlFor="gender">Gender: </label>
+        {/* <label htmlFor="gender">Gender: </label> */}
 
         <div className={styles.switch}>
 
-        <input
+        <input 
           type="radio"
           id="male"
           value="male"
