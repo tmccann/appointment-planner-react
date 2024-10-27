@@ -1,15 +1,17 @@
-import FormContainer from '../forms/FormContainer/FormContainer'
+import AppointmentForm from "../forms/AppointmentsForm/AppointmentForm";
+import FormContainer from "../forms/FormContainer/FormContainer";
 
-const AppointmentsPage = () => {
-    return (
-      <div>
-          <FormContainer 
-            title={'Appointment'}
-          />
-        <section>
-          {/* card component */}
-        </section>
-      </div>
+const AppointmentsPage = ( {contacts} ) => {
 
-  )};
-export default AppointmentsPage
+  return (
+    <div>
+      <FormContainer
+        title={"Appointment"}>
+        <AppointmentForm contacts={contacts}/>
+      </FormContainer>
+
+      <section>{/* card component */}</section>
+    </div>
+  );
+};
+export default AppointmentsPage;
