@@ -58,7 +58,8 @@ function ContactForm({ addContact }) {
       />
       <ErrorMessage errors={errors} name="phone" />
         {/* <label htmlFor="gender">Gender: </label> */}
-
+        <fieldset className={styles.fieldset}>
+        <legend>Gender: </legend>
         <div className={styles.switch}>
 
         <input 
@@ -77,6 +78,7 @@ function ContactForm({ addContact }) {
         />
         <label htmlFor="female" className={styles.switchLabel}>Female</label>
       </div>
+      </fieldset>
       <ErrorMessage errors={errors} name="gender" />
 
       <div className={sharedStyles.submitButton}>

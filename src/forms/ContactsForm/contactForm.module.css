@@ -1,5 +1,13 @@
+fieldset {
+  border: none;
+}
+
+fieldset legend{
+  padding: 0.5rem;
+  font-weight: bold;
+}
 .switch {
-	display: flex;
+  display: flex;
   max-width: 50%;
 }
 
@@ -11,7 +19,7 @@
   text-align: center;
   line-height: 1.5rem;
   background-color: #fff;
-  width: 95%; 
+  width: 95%;
   margin: 0;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -21,19 +29,18 @@
 
 .switch label.switchLabel:hover {
   background-color: #0056b3;
-  color:#fff;;
+  color: #fff;
 }
 .switch input:checked + label {
-	background-color: #2d96cd;
-	color:#fff;
-	box-shadow: none;
+  background-color: #2d96cd;
+  color: #fff;
+  box-shadow: none;
 }
 
 .switch label:first-of-type {
-	border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .switch label:last-of-type {
-	border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
-
