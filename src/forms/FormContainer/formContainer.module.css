@@ -1,7 +1,7 @@
 /* Form Wrapper */
 .formWrapper {
     display: flex;
-    background-image: url('src/assets/images/contactFormImagage.jpg');
+    background-image: url('../../assets/images/contactFormImagage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
