@@ -6,9 +6,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 // Reusable ErrorMessage Component
 
-function AppointmentForm({ contacts=[]}) {
+function AppointmentForm({ contacts = [] }) {
   const [startDate, setStartDate] = useState(null);
-  const [ availableTimes, setAvailableTimes]=useState([])
+  const [availableTimes, setAvailableTimes] = useState([])
   const timeIntervals = [
     { time: "09:00" },
     { time: "09:30" },
@@ -55,29 +55,28 @@ function AppointmentForm({ contacts=[]}) {
   } = useForm();
 
   function checkDate(date, field) {
-    console.log(date);
-    
+
     const checkToday = new Date(); // Set to today's date and time
     // use to test with diffrent times
     // checkToday.setHours(12, 0, 0, 0);
     const selectedDay = date.toLocaleDateString("en-gb");
     const today = checkToday.toLocaleDateString("en-gb");
     const currentHour = checkToday.getHours();
-  
+
     if (selectedDay === today && currentHour < 17) {
       const todaysAvailableTimes = timeIntervals.filter(({ time }) => {
         const [slotHours, slotMinutes] = time.split(':').map(Number);
         return slotHours > currentHour || (slotHours === currentHour && slotMinutes > checkToday.getMinutes());
       });
-     
+
       setAvailableTimes(todaysAvailableTimes)
-    }else{
+    } else {
       setAvailableTimes(timeIntervals)
     }
-  
+
     field.onChange(date);
   }
-  
+
 
   const ErrorMessage = ({ errors, name }) => {
     if (!errors[name]) return null;
@@ -87,7 +86,8 @@ function AppointmentForm({ contacts=[]}) {
     <form
       id="appointmentForm"
       onSubmit={handleSubmit((data) => {
-        console.log(data);
+        data.date = data.date.toLocaleDateString("en-gb")
+        console.log(data)
       })}
     >
       <label htmlFor="title">Title:</label>
@@ -133,28 +133,33 @@ function AppointmentForm({ contacts=[]}) {
         rules={{ required: "Date and time are required" }}
         render={({ field }) => (
           <div className={styles.customDatePicker}>
+            <label htmlFor="times">Select an available date</label>
             <DatePicker
               placeholderText="Select date and time"
               selected={field.value}
               onChange={(date) => checkDate(date, field)}
               minDate={startDate}
+              dateFormat='dd/MM/yyyy'
             />
           </div>
         )}
       />
-      <select>
-      <option key="defaultValue" value="">
-          {availableTimes.length === 0
-            ? "Please Select a date"
-            : "available times"}
+
+      <label htmlFor="times">Select an available time</label>
+      <select
+        id="times"
+        {...register("times", { required: "Time selection is required" })}
+      >
+        <option key="defaultValue" value="">
+          {availableTimes.length === 0 ? "no avaiable times" : "Available times"}
         </option>
-        {(availableTimes || []).map(({time}) => (
+        {(availableTimes || []).map(({ time }) => (
           <option key={time} value={time}>
             {time}
           </option>
         ))}
-    
       </select>
+      <ErrorMessage errors={errors} name="times" />
 
       <div className={sharedStyles.submitButton}>
         <button className={sharedStyles.formButton} type="submit">
