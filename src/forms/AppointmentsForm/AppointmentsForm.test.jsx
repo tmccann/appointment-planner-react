@@ -46,12 +46,19 @@ describe('appointment form validation',()=>{
         fireEvent.click(screen.getByRole('button' , {name: /submit/i}))
         expect(await screen.findByText(/Contact selection required/i)).toBeInTheDocument()
     })
-    test('no availablr times', async () => {
+
+    test('error if no date selected', async () => {
+        render(<AppointmentForm contacts={dummyContacts}/>)
+        fireEvent.click(screen.getByRole('button' , {name: /submit/i}))
+        expect(await screen.findByText(/Please select an available date/i)).toBeInTheDocument()
+    })
+
+    test('no available times', async () => {
         render(<AppointmentForm times={[]}/>)
         expect(await screen.findByText(/no avaiable times/i)).toBeInTheDocument()
     })
 
-    test('show error if no cotact selected', async () => {
+    test('error if no time selected', async () => {
         render(<AppointmentForm times={dummyTimes}/>)
         fireEvent.click(screen.getByRole('button' , {name: /submit/i}))
         expect(await screen.findByText(/Time selection is required/i)).toBeInTheDocument()

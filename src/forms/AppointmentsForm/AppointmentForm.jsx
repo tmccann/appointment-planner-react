@@ -130,7 +130,7 @@ function AppointmentForm({ contacts = [] }) {
       <Controller
         control={control}
         name="date"
-        rules={{ required: "Date and time are required" }}
+        rules={{ required: "Please select an available date" }}
         render={({ field }) => (
           <div className={styles.customDatePicker}>
             <label htmlFor="times">Select an available date</label>
@@ -144,7 +144,7 @@ function AppointmentForm({ contacts = [] }) {
           </div>
         )}
       />
-
+      <ErrorMessage errors={errors} name="date" />
       <label htmlFor="times">Select an available time</label>
       <select
         id="times"
