@@ -1,6 +1,7 @@
 /* Form Wrapper */
 .formWrapper {
     display: flex;
+    min-height: 600px;
     background-image: url('../../assets/images/contactFormImagage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
