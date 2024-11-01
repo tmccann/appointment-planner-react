@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 function App() {
 
+  const [startDate, setStartDate] = useState(null);
+  const [availableTimes, setAvailableTimes] = useState([])
   const [contacts, setContacts] = useState( [
     {
       id: 1,
@@ -46,7 +48,11 @@ function App() {
   return (
     <BrowserRouter>
          <AppRoutes 
+         startDate={startDate}
+         setStartDate={setStartDate}
          contacts={contacts}
+         availableTimes={availableTimes}
+         setAvailableTimes={setAvailableTimes}
          />    
     </BrowserRouter>
   )
