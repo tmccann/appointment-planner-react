@@ -1,13 +1,20 @@
 import AppointmentForm from "../forms/AppointmentsForm/AppointmentForm";
 import FormContainer from "../forms/FormContainer/FormContainer";
 
-const AppointmentsPage = ( {contacts} ) => {
+const AppointmentsPage = ( { contacts, startDate, setStartDate, availableTimes, setAvailableTimes} ) => {
 
   return (
     <div>
       <FormContainer
         title={"Appointment"}>
-        <AppointmentForm contacts={contacts}/>
+        <AppointmentForm 
+        contacts={contacts}
+        startDate={startDate}
+        setStartDate={setStartDate}
+        availableTimes={availableTimes}
+        setAvailableTimes={setAvailableTimes}
+        
+        />
       </FormContainer>
 
       <section>{/* card component */}</section>

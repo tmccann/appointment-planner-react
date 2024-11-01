@@ -1,13 +1,10 @@
 import { useForm } from 'react-hook-form';
+import ErrorMessage from '../errorMessage';
 import MaskedInput from 'react-text-mask';
 import styles from './contactForm.module.css';
 import sharedStyles from '../shared.module.css';
 
 // Reusable ErrorMessage Component
-const ErrorMessage = ({ errors, name }) => {
-  if (!errors[name]) return null;
-  return <span className={sharedStyles.error}>{errors[name].message}</span>;
-};
 
 function ContactForm({ addContact }) {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
