@@ -1,17 +1,18 @@
 import ContactForm from '../forms/ContactsForm/ContactForm'
 import FormContainer from '../forms/FormContainer/FormContainer'
+import ContactList from '../components/contactlist/ContactList'
 
 
-const ContactsPage = () => {
+const ContactsPage = ( { contacts }) => {
+
   return (
     <div>
         <FormContainer title={'Contact'}>     
           <ContactForm />
         </FormContainer>
-        
-      <section>
-        {/* card component */}
-      </section>
+        <ContactList 
+        contacts={contacts}
+        />
     </div>
   )
 }

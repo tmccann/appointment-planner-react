@@ -9,7 +9,11 @@ const AppRoutes = ({ contacts, startDate, setStartDate, availableTimes, setAvail
     <Routes>
     <Route path="/" element={<MainLayout />}>
       <Route index element={<Navigate to="/contacts" replace />} />
-      <Route path="contacts" element={<ContactsPage />} />
+      <Route path="contacts" element={<ContactsPage 
+      contacts={contacts}
+      
+      
+      />} />
       <Route path="appointments" element={<AppointmentsPage 
         contacts={contacts}
         startDate={startDate}

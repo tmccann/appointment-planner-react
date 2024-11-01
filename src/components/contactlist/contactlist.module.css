@@ -1,0 +1,17 @@
+.contactList {
+    margin-top: 30px;
+}
+
+.contactList h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Contact List */
+.contactListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
