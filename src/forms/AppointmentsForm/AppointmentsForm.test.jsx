@@ -54,12 +54,12 @@ describe('appointment form validation',()=>{
     })
 
     test('no available times', async () => {
-        render(<AppointmentForm times={[]}/>)
+        render(<AppointmentForm availableTimes={[]}/>)
         expect(await screen.findByText(/no avaiable times/i)).toBeInTheDocument()
     })
 
     test('error if no time selected', async () => {
-        render(<AppointmentForm times={dummyTimes}/>)
+        render(<AppointmentForm availableTimes={dummyTimes}/>)
         fireEvent.click(screen.getByRole('button' , {name: /submit/i}))
         expect(await screen.findByText(/Time selection is required/i)).toBeInTheDocument()
     })
